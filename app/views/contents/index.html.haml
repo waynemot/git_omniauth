@@ -1,0 +1,32 @@
+%h1 Listing contents
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @contents.each do |content|
+      %tr
+        %td= content.title
+        %td
+          =User.find(content.user.id).id
+          &nbsp;
+          =User.find(content.user.id).email
+        %td= link_to 'Show', content
+        -if user_signed_in?
+          %td= link_to 'Edit', edit_content_path(content)
+          %td= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' }
+        -else
+          %td
+            &nbsp;
+          %td
+            &nbsp;
+
+%br
+
+= link_to 'New Content', new_content_path

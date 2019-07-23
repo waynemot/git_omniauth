@@ -1,8 +1,16 @@
-=h3 Users
+%h3 Users
 .container
   %table
+    %thead
+      %td
+        = "ID".html_safe
+      %td
+        = "E-Mail".html_safe
     - @users.all.each do |user|
       %tr
         %td
-          = user.username
+          = user.id
+        %td
+          = user.email
+
   

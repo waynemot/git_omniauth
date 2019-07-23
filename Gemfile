@@ -18,8 +18,14 @@ gem 'uglifier', '>= 1.3.0'
 #
 # Devise auth control
 gem 'devise'
-gem 'omniauth-github'
-
+#gem 'omniauth-github'
+gem 'omniauth-cas'
+gem 'haml'
+gem 'haml-rails'
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'autoprefixer-rails'
+gem 'high_voltage'
+gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

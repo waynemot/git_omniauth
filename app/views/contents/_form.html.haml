@@ -1,0 +1,20 @@
+= form_for @content do |f|
+  - if @content.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@content.errors.count, "error")} prohibited this content from being saved:"
+      %ul
+        - @content.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :user
+    =f.text_field :user_id, type: :hidden
+    -unless @content.user_id.nil?
+      = f.text_field :user_email, value: @content.user.email
+    -else
+      = f.text_field :user_id
+  .actions
+    = f.submit 'Save'
