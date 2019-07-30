@@ -3,10 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :trackable,
-         :omniauthable
+         :omniauthable, omniauth_providers: [:cas]
 
-  def self.from_omniauth(auth)  
+  def self.from_omniauth(auth)
+    Rails.logger.info ("DEBUG: user.rb from_omniauth() traversed... auth: #{auth}")
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid

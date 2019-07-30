@@ -1,6 +1,8 @@
 require_relative 'boot'
 
 require 'rails/all'
+#require 'oa-oauth'
+#use OmniAuth::Strategies::Cas
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

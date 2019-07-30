@@ -1,0 +1,4 @@
+class Cas < ApplicationController
+
+
+end
